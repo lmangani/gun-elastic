@@ -39,8 +39,12 @@ const gun = new Gun({
 });
 ```
 
-## Screenshot
-![image](https://user-images.githubusercontent.com/1423657/34941573-98c95322-f9f4-11e7-992b-1f94e10a45eb.png)
+## Screenshots
+#### Network Relations
+<img width=800 src="https://user-images.githubusercontent.com/1423657/34941573-98c95322-f9f4-11e7-992b-1f94e10a45eb.png"/>
+
+#### Circular Sankey
+<img width=500 src="https://user-images.githubusercontent.com/1423657/34949865-b084e0fe-fa11-11e7-8456-f9f49fef4098.png"/>
 
 ### Todo
 * [ ] Authentication support, array of servers, etc
