@@ -1,6 +1,12 @@
 const {NodeAdapter} = require('gun-flint');
 const elasticsearch = require('elasticsearch');
 
+var _debug = false;
+var returnErr = function(err,code) {
+	var err = { message: err, code: function(){ return code; } };
+	return err;
+};
+
 module.exports = new NodeAdapter({
 
     /**
@@ -21,15 +27,17 @@ module.exports = new NodeAdapter({
     opt: function(context, opt) {
         let elastic = opt.elastic || null;
         if (elastic) {
-            this.initialized = true;
             let port = elastic.port || '9200';
             let host = elastic.host || 'localhost';
             let query = elastic.query ? '?' + elastic.query : '';
             this.index = elastic.index || 'gun';
             this.type = elastic.type || 'gundb';
 	    this.db = new elasticsearch.Client({
-		  host: this.host+':'+this,port
+		  host: host+':'+port
 	    });
+	    if (opt.debug) _debug = true;
+            this.initialized = true;
+
         } else {
             this.initialized = false;
         }
@@ -56,8 +64,14 @@ module.exports = new NodeAdapter({
 		  size: 1
 		}
 	   }, function(err,resp,status){
-		if(err) done(err);
-		done(null,resp.hits.hits[0]['_source'] || {} );
+		_debug && console.log(status,resp);
+		if(err) done(returnErr(err,status));
+		else if(resp.hits.total == 0) done(null);
+		else if(resp.hits.hits) {
+			_debug && console.log(status,resp.hits.hits[0]);
+			done(null,resp.hits.hits[0]['_source'].val);
+		}
+		return;
 	   });
         }
     },
@@ -83,7 +97,9 @@ module.exports = new NodeAdapter({
 			val: node
 		}
 	   }, function(err,resp,status){
-		if(err) console.log(err);
+		_debug && console.log(err,resp,status);
+		if(err) _debug && console.log(err);
+		done
 	   });
         }
     },
@@ -106,5 +122,5 @@ module.exports = new NodeAdapter({
 	  }
 	});
     }
-
+   
 });
