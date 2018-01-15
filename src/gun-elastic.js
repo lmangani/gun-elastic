@@ -31,7 +31,7 @@ module.exports = new NodeAdapter({
 		  host: this.host+':'+this,port
 	    });
         } else {
-            this.initialized = false
+            this.initialized = false;
         }
     },
 
@@ -99,7 +99,7 @@ module.exports = new NodeAdapter({
 	  requestTimeout: 5000
 	}, function (error) {
 	  if (error) {
-	    console.trace('elasticsearch cluster is down!);
+	    console.trace('elasticsearch cluster is down!');
 	    this.initialized = false;
 	  } else {
 	    this.initialized = true;
