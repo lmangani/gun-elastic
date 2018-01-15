@@ -37,6 +37,10 @@ const gun = new Gun({
 });
 ```
 
+## Screenshot
+![image](https://user-images.githubusercontent.com/1423657/34941573-98c95322-f9f4-11e7-992b-1f94e10a45eb.png)
+
+
 ## Credit
 This extension is made possible by [gun-flint](https://github.com/sjones6/gun-flint) @sjones6
 
