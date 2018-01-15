@@ -3,11 +3,13 @@
 </p> 
 
 # Gun-Elastic
-Elasticsearch native persistence layer for [Gun](https://github.com/amark/gun)
+Elasticsearch native persistence layer for [Gun](https://github.com/amark/gun), a realtime, distributed, offline-first, graph database engine.
 
-[Gun](https://github.com/amark/gun) is a realtime, distributed, offline-first, graph database engine.
+This `gun` storage adapter interfaces with Elasticsearch using the `flint node` strategy:
+* `get` request expect to read an entire Gun node.
+* `put` requests write an entire Gun node.
 
-### THIS IS EXPERIMENTAL WORK IN PROGRESS! USE AT YOUR OWN RISK!
+### THIS WORK IS EXPERIMENTAL WORK IN PROGRESS! USE AT YOUR OWN RISK!
 #### Comments and PR/Contributions are super welcome!
 
 -------------
