@@ -1,12 +1,17 @@
+<p>
+    <a href="http://gun.js.org/"><img width="25%" src="https://cldup.com/TEy9yGh45l.svg"/></a>
+</p> 
+
 # Gun-Elastic
+Elasticsearch native persistence layer for [Gun](https://github.com/amark/gun)
 
-An Elasticsearch adapter for GunJS.
+[Gun](https://github.com/amark/gun) is a realtime, distributed, offline-first, graph database engine.
 
-# Some Considerations
+### THIS IS EXPERIMENTAL WORK IN PROGRESS! USE AT YOUR OWN RISK!
+#### Comments and PR/Contributions are super welcome!
 
-`gun-elastic` stores the each graph node (along with some metadata) in an ES document and uses the key as the '_id'. This makes `gun-elastic` right for some application but not all.
-
-# Installation
+-------------
+## Installation
 
 `npm install gun-elastic`.
 
@@ -32,10 +37,10 @@ const gun = new Gun({
 });
 ```
 
-# Credit
+## Credit
 This extension is made possible by [gun-flint](https://github.com/sjones6/gun-flint) @sjones6
 
-# Issues & Contributing
+## Issues & Contributing
 
 Issues welcome on [Github](https://github.com/lmangani/gun-elastic/issues).
 
