@@ -1,0 +1,31 @@
+{
+  "name": "gun-elastic",
+  "version": "0.1.0",
+  "description": "An Elasticsearch adapter for Gunjs",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lmangani/gun-elastic.git"
+  },
+  "keywords": [
+    "elastic",
+    "elasticsearch",
+    "gun",
+    "gunjs",
+    "adapter"
+  ],
+  "author": "lmangani",
+  "license": "MIT",
+  "scripts": {
+    "test": "flint test ./src/gun-elastic.js --opt=./flint-opt.js",
+    "profile": "flint profile ./src/gun-elastic.js --opt=./flint-opt.js"
+  },
+  "bugs": {
+    "url": "https://github.com/lmangani/gun-elastic/issues"
+  },
+  "homepage": "https://github.com/lmangani/gun-elastic#readme",
+  "dependencies": {
+    "elasticsearch": "^14.0.0",
+    "gun-flint": "^0.0"
+  }
+}
