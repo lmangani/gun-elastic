@@ -27,11 +27,11 @@ const gun = new Gun({
     file: false,
     web: httpServer,
 
-    // The following are defaults. You can supply `true` to use all defaults, or overwrite the ones you choose
+    // The following are defaults.
     elastic: {
         host: 'localhost',
         port: '9200',
-        index: 'gun',
+        index: 'gun_es',
         type: 'gun_data'
     }
 });
@@ -40,6 +40,9 @@ const gun = new Gun({
 ## Screenshot
 ![image](https://user-images.githubusercontent.com/1423657/34941573-98c95322-f9f4-11e7-992b-1f94e10a45eb.png)
 
+### Todo
+* [ ] Authentication support, array of servers, etc
+* [ ] Add tests with ES mockups
 
 ## Credit
 This extension is made possible by [gun-flint](https://github.com/sjones6/gun-flint) @sjones6
