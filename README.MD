@@ -5,9 +5,10 @@
 # Gun-Elastic
 Elasticsearch native persistence layer for [Gun](https://github.com/amark/gun), a realtime, distributed, offline-first, graph database engine.
 
-This `gun` storage adapter interfaces with Elasticsearch using the `flint node` strategy:
+This `gun` storage adapter interfaces with Elasticsearch using an extended `flint node` strategy:
 * `get` request expect to read an entire Gun node.
 * `put` requests write an entire Gun node.
+  * `node` key-value structure _(soul,relation,field,value,state)_ optionally saved to secondary index
 
 ### THIS WORK IS EXPERIMENTAL WORK IN PROGRESS! USE AT YOUR OWN RISK!
 #### Comments and PR/Contributions are super welcome!
@@ -34,7 +35,10 @@ const gun = new Gun({
         host: 'localhost',
         port: '9200',
         index: 'gun_es',
-        type: 'gun_data'
+        type: 'gun_data',
+        
+        store_keys: false,
+        store_keys_index: 'gun_es_keys'
     }
 });
 ```
@@ -47,6 +51,7 @@ const gun = new Gun({
 <img width=500 src="https://user-images.githubusercontent.com/1423657/34949865-b084e0fe-fa11-11e7-8456-f9f49fef4098.png"/>
 
 ### Todo
+* [x] Optional Key Storage in secondary index
 * [ ] Authentication support, array of servers, etc
 * [ ] Add tests with ES mockups
 
