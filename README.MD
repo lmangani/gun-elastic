@@ -3,11 +3,13 @@
 </p> 
 
 # Gun-Elastic
-Elasticsearch native persistence layer for [Gun](https://github.com/amark/gun)
+Elasticsearch native persistence layer for [Gun](https://github.com/amark/gun), a realtime, distributed, offline-first, graph database engine.
 
-[Gun](https://github.com/amark/gun) is a realtime, distributed, offline-first, graph database engine.
+This `gun` storage adapter interfaces with Elasticsearch using the `flint node` strategy:
+* `get` request expect to read an entire Gun node.
+* `put` requests write an entire Gun node.
 
-### THIS IS EXPERIMENTAL WORK IN PROGRESS! USE AT YOUR OWN RISK!
+### THIS WORK IS EXPERIMENTAL WORK IN PROGRESS! USE AT YOUR OWN RISK!
 #### Comments and PR/Contributions are super welcome!
 
 -------------
@@ -27,15 +29,26 @@ const gun = new Gun({
     file: false,
     web: httpServer,
 
-    // The following are defaults. You can supply `true` to use all defaults, or overwrite the ones you choose
+    // The following are defaults.
     elastic: {
         host: 'localhost',
         port: '9200',
-        index: 'gun',
+        index: 'gun_es',
         type: 'gun_data'
     }
 });
 ```
+
+## Screenshots
+#### Network Relations
+<img width=800 src="https://user-images.githubusercontent.com/1423657/34941573-98c95322-f9f4-11e7-992b-1f94e10a45eb.png"/>
+
+#### Circular Sankey
+<img width=500 src="https://user-images.githubusercontent.com/1423657/34949865-b084e0fe-fa11-11e7-8456-f9f49fef4098.png"/>
+
+### Todo
+* [ ] Authentication support, array of servers, etc
+* [ ] Add tests with ES mockups
 
 ## Credit
 This extension is made possible by [gun-flint](https://github.com/sjones6/gun-flint) @sjones6

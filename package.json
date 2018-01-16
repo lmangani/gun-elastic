@@ -1,6 +1,6 @@
 {
   "name": "gun-elastic",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An Elasticsearch adapter for Gunjs",
   "main": "src/index.js",
   "repository": {
@@ -12,9 +12,10 @@
     "elasticsearch",
     "gun",
     "gunjs",
+    "storage",
     "adapter"
   ],
-  "author": "lmangani",
+  "author": "Lorenzo Mangani <lorenzo.mangani@gmail.com>",
   "license": "MIT",
   "scripts": {
     "test": "flint test ./src/gun-elastic.js --opt=./flint-opt.js",
