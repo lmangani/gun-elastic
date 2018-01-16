@@ -1,10 +1,11 @@
 const {NodeAdapter} = require('gun-flint');
 const elasticsearch = require('elasticsearch');
+const Gun = require('gun/gun');
 
 var _debug = false;
 var returnErr = function(err,code) {
-	var err = { message: err, code: function(){ return code; } };
-	return err;
+	var error = { message: err, code: function(){ return code; } };
+	return error;
 };
 
 module.exports = new NodeAdapter({
@@ -35,6 +36,12 @@ module.exports = new NodeAdapter({
 	    this.db = new elasticsearch.Client({
 		  host: host+':'+port
 	    });
+
+	    this.store_node = elastic.store_nodes || true;
+	    this.store_keys = elastic.store_keys || false;
+	    this.store_keys_index = elastic.store_keys_index || this.index;
+	    this.store_keys_type = elastic.store_keys_type || this.type;
+
 	    if (opt.debug) _debug = true;
             this.initialized = true;
 
@@ -86,8 +93,38 @@ module.exports = new NodeAdapter({
      * @return {void}
      */
     put: function(key, node, done) {
+
         if (this.initialized) {
 
+	// Optional Key Storage
+	   if (this.store_keys) {
+		  // Emulate Elassandra Table w/ node KV
+		  var rows = [];
+		  var row_insert = { index:  { _index: this.store_key_index, _type: this.store_key_type } };
+		  Gun.node.is(node, function(a,b,c,d) {
+			var row = { field: b, soul: d, state: new Date().getTime() };
+			if (c[b] instanceof Object ) {
+				row.relation = c[b]['#'];
+				row.value = "";
+			} else {
+				row.relation = "";
+				row.value = c[b];
+			}
+			rows.push(row_insert);
+			rows.push(row);
+			_debug && console.log(row);
+		  });
+
+		  this.db.bulk({
+			body: rows
+		  }, function (err, resp, status) {
+			_debug && console.log(err,resp,status);
+			if(err) _debug && console.log(err);
+			_debug && console.log(resp);
+	          });
+	   }
+
+	// Full Node Storage
 	   this.db.index({
 		index: this.index,
 		type: this.type,
@@ -99,9 +136,13 @@ module.exports = new NodeAdapter({
 	   }, function(err,resp,status){
 		_debug && console.log(err,resp,status);
 		if(err) _debug && console.log(err);
-		done
+		done;
 	   });
+
         }
+
+
+
     },
 
     /**
