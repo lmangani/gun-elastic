@@ -105,9 +105,7 @@ module.exports = new NodeAdapter({
 			var row = { field: b, soul: d, state: new Date().getTime() };
 			if (c[b] instanceof Object ) {
 				row.relation = c[b]['#'];
-				row.value = "";
 			} else {
-				row.relation = "";
 				row.value = c[b];
 			}
 			rows.push(row_insert);

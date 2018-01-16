@@ -18,8 +18,10 @@ var gun = Gun({
   }
 });
 
-var cat = {name: "Fluffy", species: "kitty"};
-var mark = {boss: cat};
+var mouse = {name: "Jerry", species: "mouse"};
+var lorenzo = {name: "Lorenzo", pet: mouse };
+var cat = {name: "Fluffy", species: "kitty", enemy: mouse};
+var mark = {boss: cat, name: 'Mark', friend: lorenzo};
 cat.slave = mark;
 
 // partial updates merge with existing data!
