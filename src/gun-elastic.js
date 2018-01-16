@@ -100,7 +100,7 @@ module.exports = new NodeAdapter({
 	   if (this.store_keys) {
 		  // Emulate Elassandra Table w/ node KV
 		  var rows = [];
-		  var row_insert = { index:  { _index: this.store_key_index, _type: this.store_key_type } };
+		  var row_insert = { index:  { _index: this.store_keys_index, _type: this.store_keys_type } };
 		  Gun.node.is(node, function(a,b,c,d) {
 			var row = { field: b, soul: d, state: new Date().getTime() };
 			if (c[b] instanceof Object ) {

@@ -12,7 +12,9 @@ var gun = Gun({
 	host: 'elassandra-seed', 
 	port:  9200, 
 	index: 'gun_es',
-	type:  'gun_data'
+	type:  'gun_data',
+	store_keys: true,
+	store_keys_index: 'gun_es_keys'
   }
 });
 
