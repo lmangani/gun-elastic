@@ -44,8 +44,8 @@ const gun = new Gun({
 ```
 
 ## Screenshots
-#### Network Relations
-<img width=800 src="https://user-images.githubusercontent.com/1423657/34941573-98c95322-f9f4-11e7-992b-1f94e10a45eb.png"/>
+#### Filtered Network Relations
+<img width=800 src="https://user-images.githubusercontent.com/1423657/35120962-165656ee-fc9a-11e7-9018-9853fc56cda2.gif"/>
 
 #### Circular Sankey
 <img width=500 src="https://user-images.githubusercontent.com/1423657/34949865-b084e0fe-fa11-11e7-8456-f9f49fef4098.png"/>
