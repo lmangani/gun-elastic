@@ -46,7 +46,7 @@ const gun = new Gun({
 ## Screenshots
 #### Filtered Network Relations
 Search and Display node relations using the extended [kbn_network](https://github.com/lmangani/kbn_network) plugin
-<img width=800 src="https://user-images.githubusercontent.com/1423657/35193637-cc629cf6-fea5-11e7-960d-a953a66d3977.gif"/>
+<img width=800 src="https://user-images.githubusercontent.com/1423657/35195017-6f6ba2fa-febd-11e7-9a17-83b877cb61fc.gif"/>
 
 #### Circular Sankey
 <img width=500 src="https://user-images.githubusercontent.com/1423657/34949865-b084e0fe-fa11-11e7-8456-f9f49fef4098.png"/>
