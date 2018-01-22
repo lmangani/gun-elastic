@@ -49,7 +49,7 @@ Search and Display node relations using the extended [kbn_network](https://githu
 <img width=800 src="https://user-images.githubusercontent.com/1423657/35195017-6f6ba2fa-febd-11e7-9a17-83b877cb61fc.gif"/>
 
 #### Circular Sankey
-<img width=500 src="https://user-images.githubusercontent.com/1423657/34949865-b084e0fe-fa11-11e7-8456-f9f49fef4098.png"/>
+<img width=800 src="https://user-images.githubusercontent.com/1423657/35231460-273eccc8-ff99-11e7-9d7a-39a0edb497a6.gif"/>
 
 ### Todo
 * [x] Optional Key Storage in secondary index
