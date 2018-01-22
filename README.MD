@@ -55,7 +55,11 @@ Search and Display node relations using the [kbn_graph](https://github.com/lmang
 * [ ] Authentication support, array of servers, etc
 * [ ] Add tests with ES mockups
 
-## Credit
+## Acknowledgement
+Gun is open-sourced and copyrighted by Mark Nadal
+
+Elasticsearch and Kibana are trademarks of Elasticsearch BV, registered in the U.S. and in other countries.
+
 This extension is made possible by [gun-flint](https://github.com/sjones6/gun-flint) @sjones6
 
 ## Issues & Contributing
