@@ -1,6 +1,6 @@
 {
   "name": "gun-elastic",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "An Elasticsearch adapter for Gunjs",
   "main": "src/index.js",
   "repository": {
@@ -27,7 +27,7 @@
   "homepage": "https://github.com/lmangani/gun-elastic#readme",
   "dependencies": {
     "elasticsearch": "^14.0.0",
-    "gun": "^0.9.8",
-    "gun-flint": "^0.0"
+    "gun": "^0.9.9992",
+    "gun-flint": "0.0.28"
   }
 }
