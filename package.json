@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/lmangani/gun-elastic#readme",
   "dependencies": {
-    "elasticsearch": "^14.0.0",
+    "elasticsearch": "^16.7.3",
     "gun": "^0.2019.416",
     "gun-flint": "0.0.28"
   }
